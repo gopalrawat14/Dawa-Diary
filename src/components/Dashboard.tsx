@@ -70,7 +70,7 @@ export const Dashboard: React.FC = () => {
             <span className="qa-label-en">Document Upload</span>
             <span className="qa-label-hi">Dawaai ya report add karein</span>
           </div>
-          <div className="quick-action-btn">
+          <div className="quick-action-btn" onClick={() => setCurrentTab('records')}>
             <div className="qa-icon bg-purple"><Clock size={24} color="white" /></div>
             <span className="qa-label-en">Timeline</span>
             <span className="qa-label-hi">Poori history dekho</span>
@@ -96,7 +96,7 @@ export const Dashboard: React.FC = () => {
         <section className="dashboard-section">
           <div className="section-header">
             <h3 className="section-title">Haali records</h3>
-            <button className="link-btn">Sab dekho &rarr;</button>
+            <button className="link-btn" onClick={() => setCurrentTab('records')}>Sab dekho &rarr;</button>
           </div>
           <div className="documents-list">
             <DocumentCard 
@@ -153,7 +153,7 @@ export const Dashboard: React.FC = () => {
               <div className="family-avatar"><User size={24} /></div>
               <span className="family-name">Rohan</span>
             </div>
-            <div className="family-member">
+            <div className="family-member" onClick={() => alert('Add family member feature coming soon!')}>
               <div className="family-avatar dashed"><Plus size={24} color="var(--color-primary)" /></div>
               <span className="family-name text-blue">Add</span>
             </div>
@@ -164,7 +164,7 @@ export const Dashboard: React.FC = () => {
         <section className="dashboard-section pb-xl">
           <div className="section-header">
             <h3 className="section-title">Upcoming Reminders</h3>
-            <button className="link-btn">Sab reminders &rarr;</button>
+            <button className="link-btn" onClick={() => setCurrentTab('medicines')}>Sab reminders &rarr;</button>
           </div>
           <div className="reminders-list">
             <div className="reminder-item">

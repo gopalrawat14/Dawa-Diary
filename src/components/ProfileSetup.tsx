@@ -13,6 +13,14 @@ export const ProfileSetup: React.FC = () => {
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [bloodGroup, setBloodGroup] = useState('');
+  const [dob, setDob] = useState({ day: '', month: '', year: '' });
+
+  const days = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const years = Array.from({ length: 100 }, (_, i) => (new Date().getFullYear() - i).toString());
   
   const finishSetup = () => {
     setIsFinishing(true);
@@ -61,9 +69,30 @@ export const ProfileSetup: React.FC = () => {
       <div className="form-group">
         <label className="setup-label">Date of Birth</label>
         <div className="dob-group">
-          <select className="setup-select"><option>Day</option></select>
-          <select className="setup-select"><option>Month</option></select>
-          <select className="setup-select"><option>Year</option></select>
+          <select 
+            className="setup-select" 
+            value={dob.day} 
+            onChange={(e) => setDob({ ...dob, day: e.target.value })}
+          >
+            <option value="">Day</option>
+            {days.map(d => <option key={d} value={d}>{d}</option>)}
+          </select>
+          <select 
+            className="setup-select" 
+            value={dob.month} 
+            onChange={(e) => setDob({ ...dob, month: e.target.value })}
+          >
+            <option value="">Month</option>
+            {months.map(m => <option key={m} value={m}>{m}</option>)}
+          </select>
+          <select 
+            className="setup-select" 
+            value={dob.year} 
+            onChange={(e) => setDob({ ...dob, year: e.target.value })}
+          >
+            <option value="">Year</option>
+            {years.map(y => <option key={y} value={y}>{y}</option>)}
+          </select>
         </div>
       </div>
 

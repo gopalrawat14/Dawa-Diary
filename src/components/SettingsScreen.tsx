@@ -25,7 +25,7 @@ export const SettingsScreen: React.FC = () => {
             <h3>Ramesh Kumar</h3>
             <p>+91 98765 43210</p>
           </div>
-          <button className="text-btn text-primary font-bold">Edit</button>
+          <button className="text-btn text-primary font-bold" onClick={() => alert('Profile editing feature coming soon!')}>Edit</button>
         </div>
       </section>
 
@@ -133,7 +133,7 @@ export const SettingsScreen: React.FC = () => {
               <p>24 hours default</p>
             </div>
           </div>
-          <div className="settings-item abha-link">
+          <div className="settings-item abha-link" onClick={() => alert('ABHA linking feature coming soon!')}>
             <div className="abha-logo">A</div>
             <div className="si-content">
               <h4>Ayushman Bharat (ABHA)</h4>
