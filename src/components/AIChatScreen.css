@@ -1,14 +1,15 @@
-.ai-chat-screen {
+.record-detail-screen {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #F8FAFB;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  background-color: #F1F5F9;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  animation: slideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
 }
 
 /* Header */

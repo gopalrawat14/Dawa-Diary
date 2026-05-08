@@ -57,7 +57,6 @@ export const Onboarding: React.FC = () => {
               <div className="onboarding-text-area">
                 <h2 className="onboarding-title-hi">{slide.titleHi}</h2>
                 <p className="onboarding-desc-hi">{slide.descHi}</p>
-                <button className="text-btn text-secondary font-bold" onClick={() => navigate('/profile-setup')}>Skip</button>
                 <p className="onboarding-title-en">{slide.titleEn}</p>
               </div>
             </div>

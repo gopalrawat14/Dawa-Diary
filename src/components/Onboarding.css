@@ -133,10 +133,7 @@
 .btn-skip {
   padding: 0 var(--spacing-md) !important;
   color: var(--color-text-secondary) !important;
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  z-index: 100;
+  font-weight: var(--font-weight-semibold);
 }
 
 .btn-next {

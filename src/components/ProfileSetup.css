@@ -31,12 +31,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  animation: slideInRight 0.3s ease forwards;
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 /* Typography Helpers */
