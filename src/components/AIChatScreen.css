@@ -1,12 +1,12 @@
-.record-detail-screen {
+.ai-chat-screen {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 480px;
-  height: 100vh;
-  background-color: #F1F5F9;
+  bottom: 0;
+  background-color: #F8FAFB;
   z-index: 1000;
   display: flex;
   flex-direction: column;
