@@ -43,6 +43,10 @@
   outline: none;
 }
 
+.search-main-input::placeholder {
+  color: #64748B;
+}
+
 .mic-btn {
   background: none;
   border: none;

@@ -8,12 +8,12 @@
   background-color: var(--color-card-bg);
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 8px var(--spacing-lg) 16px;
+  align-items: center;
+  padding: 12px var(--spacing-lg) calc(12px + env(safe-area-inset-bottom));
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .bottom-nav-item {

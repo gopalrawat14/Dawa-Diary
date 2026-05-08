@@ -7,8 +7,10 @@
 }
 
 .dashboard-main {
-  padding: 0 var(--spacing-lg);
-  padding-bottom: 120px; /* space for bottom nav */
+  padding: var(--spacing-lg);
+  padding-top: var(--spacing-xl);
+  padding-bottom: 120px; /* space for fixed bottom nav */
+  flex: 1;
 }
 
 .dashboard-section {
