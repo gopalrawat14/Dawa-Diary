@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './Button';
 import { Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 import './LanguageSelection.css';
 
 const languages = [
@@ -13,11 +14,15 @@ const languages = [
   { id: 'mr', flag: '🇮🇳', native: 'मराठी', transliteration: 'Marathi' },
   { id: 'kn', flag: '🇮🇳', native: 'ಕನ್ನಡ', transliteration: 'Kannada' },
   { id: 'gu', flag: '🇮🇳', native: 'ગુજરાતી', transliteration: 'Gujarati' },
-];
+] as const;
 
 export const LanguageSelection: React.FC = () => {
-  const [selectedLang, setSelectedLang] = useState<string>('hi');
+  const { language, setLanguage } = useAppContext();
   const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate('/onboarding');
+  };
 
   return (
     <div className="lang-container">
@@ -29,12 +34,12 @@ export const LanguageSelection: React.FC = () => {
 
       <div className="lang-grid">
         {languages.map((lang) => {
-          const isSelected = selectedLang === lang.id;
+          const isSelected = language === lang.id;
           return (
             <div 
               key={lang.id}
               className={`lang-card ${isSelected ? 'selected' : ''}`}
-              onClick={() => setSelectedLang(lang.id)}
+              onClick={() => setLanguage(lang.id)}
             >
               <div className="lang-card-content">
                 <span className="lang-flag">{lang.flag}</span>
@@ -52,7 +57,7 @@ export const LanguageSelection: React.FC = () => {
       </div>
 
       <div className="lang-footer">
-        <Button onClick={() => navigate('/onboarding')} className="btn-continue">
+        <Button onClick={handleContinue} className="btn-continue">
           Continue
         </Button>
         <p className="lang-note">Aap baad mein bhi bhasha badal sakte hain</p>

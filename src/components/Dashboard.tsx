@@ -21,18 +21,22 @@ import { SearchScreen } from './SearchScreen';
 import { FilterScreen } from './FilterScreen';
 import { StatesPlayground } from './StatesPlayground';
 import { Camera, Clock, Bot, QrCode, FileText, FileImage, User, Plus } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './Dashboard.css';
 
 type OverlayState = 'none' | 'upload-sheet' | 'camera' | 'ai-processing' | 'extraction-result' | 'ai-chat' | 'share-config' | 'qr-display' | 'emergency-card' | 'add-medicine' | 'mock-notification' | 'search' | 'filters' | 'states-playground';
 type TabState = 'home' | 'records' | 'medicines' | 'profile';
 
 export const Dashboard: React.FC = () => {
+  const { userName, language, setLanguage } = useAppContext();
   const [activeOverlay, setActiveOverlay] = useState<OverlayState>('none');
   const [currentTab, setCurrentTab] = useState<TabState>('home');
   const [activeRecord, setActiveRecord] = useState<string | null>(null);
-  const [lang, setLang] = useState<'EN' | 'HI'>('EN');
 
-  const toggleLang = () => setLang(prev => prev === 'EN' ? 'HI' : 'EN');
+  const toggleLang = () => {
+    const nextLang = language === 'en' ? 'hi' : 'en';
+    setLanguage(nextLang);
+  };
 
   return (
     <div className="dashboard-wrapper">
@@ -45,11 +49,11 @@ export const Dashboard: React.FC = () => {
               </div>
               <div className="user-greeting">
                 <span className="greeting-text">Namaste,</span>
-                <span className="user-name">Ramesh Kumar 👋</span>
+                <span className="user-name">{userName || 'User'} 👋</span>
               </div>
             </div>
             <button className="lang-toggle-pill" onClick={toggleLang}>
-              {lang === 'EN' ? 'EN | हिं' : 'हिं | EN'}
+              {language.toUpperCase()}
             </button>
           </div>
           <main className="dashboard-main">
@@ -67,36 +71,45 @@ export const Dashboard: React.FC = () => {
         <section className="quick-actions-scroll">
           <div className="quick-action-btn" onClick={() => setActiveOverlay('upload-sheet')}>
             <div className="qa-icon bg-blue"><Camera size={24} color="white" /></div>
-            <span className="qa-label-en">Document Upload</span>
-            <span className="qa-label-hi">Dawaai ya report add karein</span>
+            <span className="qa-label">
+              {language === 'hi' ? 'Dawaai ya report add karein' : 'Document Upload'}
+            </span>
           </div>
           <div className="quick-action-btn" onClick={() => setCurrentTab('records')}>
             <div className="qa-icon bg-purple"><Clock size={24} color="white" /></div>
-            <span className="qa-label-en">Timeline</span>
-            <span className="qa-label-hi">Poori history dekho</span>
+            <span className="qa-label">
+              {language === 'hi' ? 'Poori history dekho' : 'Timeline'}
+            </span>
           </div>
           <div className="quick-action-btn" onClick={() => setActiveOverlay('ai-chat')}>
             <div className="qa-icon bg-green"><Bot size={24} color="white" /></div>
-            <span className="qa-label-en">Dawa Diary AI</span>
-            <span className="qa-label-hi">Apne records se poochho</span>
+            <span className="qa-label">
+              {language === 'hi' ? 'Apne records se poochho' : 'Dawa Diary AI'}
+            </span>
           </div>
           <div className="quick-action-btn" onClick={() => setActiveOverlay('share-config')}>
             <div className="qa-icon bg-orange"><QrCode size={24} color="white" /></div>
-            <span className="qa-label-en">Share QR</span>
-            <span className="qa-label-hi">Doctor ko bhejo</span>
+            <span className="qa-label">
+              {language === 'hi' ? 'Doctor ko bhejo' : 'Share QR'}
+            </span>
           </div>
           <div className="quick-action-btn" onClick={() => setActiveOverlay('states-playground')}>
             <div className="qa-icon bg-blue"><FileText size={24} color="white" /></div>
-            <span className="qa-label-en">UI States</span>
-            <span className="qa-label-hi">Playground</span>
+            <span className="qa-label">
+              {language === 'hi' ? 'UI States' : 'UI States'}
+            </span>
           </div>
         </section>
 
         {/* Recent Activity */}
         <section className="dashboard-section">
           <div className="section-header">
-            <h3 className="section-title">Haali records</h3>
-            <button className="link-btn" onClick={() => setCurrentTab('records')}>Sab dekho &rarr;</button>
+            <h3 className="section-title">
+              {language === 'hi' ? 'Haali records' : 'Recent Records'}
+            </h3>
+            <button className="link-btn" onClick={() => setCurrentTab('records')}>
+              {language === 'hi' ? 'Sab dekho' : 'See all'} &rarr;
+            </button>
           </div>
           <div className="documents-list">
             <DocumentCard 
@@ -128,7 +141,9 @@ export const Dashboard: React.FC = () => {
 
         {/* Health Snapshot */}
         <section className="dashboard-section">
-          <h3 className="section-title mb-sm">Aapki sehat ek nazar mein</h3>
+          <h3 className="section-title mb-sm">
+            {language === 'hi' ? 'Aapki sehat ek nazar mein' : 'Health Snapshot'}
+          </h3>
           <div className="metric-grid">
             <MetricCard name="Blood Pressure" value="120/80" date="Today, 9:00 AM" trend="neutral" />
             <MetricCard name="Blood Sugar (F)" value="115" unit="mg/dL" date="Yesterday" trend="up" />
@@ -139,7 +154,9 @@ export const Dashboard: React.FC = () => {
 
         {/* Family Quick Access */}
         <section className="dashboard-section">
-          <h3 className="section-title mb-sm">Parivaar (Family)</h3>
+          <h3 className="section-title mb-sm">
+            {language === 'hi' ? 'Parivaar (Family)' : 'Family members'}
+          </h3>
           <div className="family-scroll">
             <div className="family-member">
               <div className="family-avatar active"><User size={24} /></div>

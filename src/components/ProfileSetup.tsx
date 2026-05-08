@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { User, Camera, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
+import { useAppContext } from '../context/AppContext';
 import './ProfileSetup.css';
 
 export const ProfileSetup: React.FC = () => {
+  const { userName, setUserName, gender, setGender } = useAppContext();
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
   const [isFinishing, setIsFinishing] = useState(false);
 
   // Form State
-  const [name, setName] = useState('');
-  const [gender, setGender] = useState('');
   const [bloodGroup, setBloodGroup] = useState('');
   const [dob, setDob] = useState({ day: '', month: '', year: '' });
 
@@ -46,8 +46,8 @@ export const ProfileSetup: React.FC = () => {
           type="text" 
           className="setup-input-large" 
           placeholder="Aapka pura naam"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
         />
       </div>
 

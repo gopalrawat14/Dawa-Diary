@@ -5,6 +5,7 @@ import { LanguageSelection } from './components/LanguageSelection';
 import { Onboarding } from './components/Onboarding';
 import { ProfileSetup } from './components/ProfileSetup';
 import { Dashboard } from './components/Dashboard';
+import { AppProvider } from './context/AppContext';
 import './App.css';
 
 function App() {
@@ -24,24 +25,26 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <Routes>
-          <Route path="/" element={<SplashScreen />} />
-          <Route path="/language" element={<LanguageSelection />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/profile-setup" element={<ProfileSetup />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-
-      {isOffline && (
-        <div className="offline-banner">
-          ⚠️ Internet nahi hai. Aap offline mode mein hain.
+    <AppProvider>
+      <BrowserRouter>
+        <div className="app-container">
+          <Routes>
+            <Route path="/" element={<SplashScreen />} />
+            <Route path="/language" element={<LanguageSelection />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/profile-setup" element={<ProfileSetup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </div>
-      )}
-    </BrowserRouter>
+
+        {isOffline && (
+          <div className="offline-banner">
+            ⚠️ Internet nahi hai. Aap offline mode mein hain.
+          </div>
+        )}
+      </BrowserRouter>
+    </AppProvider>
   );
 }
 
