@@ -1,0 +1,202 @@
+.extraction-screen {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  background-color: #F8FAFB;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  animation: slideUpFade 0.3s ease;
+}
+
+.extraction-header {
+  background-color: var(--color-primary);
+  padding: 40px var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.success-burst {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-success);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 0 0 8px rgba(46, 204, 113, 0.3);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.extraction-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 4px;
+}
+
+.extraction-subtitle {
+  font-size: var(--font-size-body);
+  opacity: 0.9;
+}
+
+.extraction-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  padding-bottom: 100px;
+}
+
+.doc-thumbnail-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: white;
+  padding: 8px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--spacing-xl);
+  cursor: pointer;
+}
+
+.thumb-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #E2E8F0;
+}
+
+.thumb-text {
+  font-size: var(--font-size-caption);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.extracted-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.field-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.editable-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.editable-input-wrap input {
+  width: 100%;
+  padding: 12px var(--spacing-md);
+  padding-right: 40px; /* room for icon */
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-input);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  transition: all 0.2s;
+}
+
+.editable-input-wrap input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(27, 108, 168, 0.1);
+}
+
+.edit-icon {
+  position: absolute;
+  right: 12px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+/* Medicines Table */
+.medicines-table-section {
+  margin-top: var(--spacing-xl);
+  background-color: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.section-label {
+  padding: var(--spacing-md);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.medicines-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.med-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 24px;
+  padding: 12px var(--spacing-md);
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13px;
+  align-items: center;
+}
+
+.med-row:last-child {
+  border-bottom: none;
+}
+
+.med-row.header {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  background-color: #F8FAFB;
+}
+
+.font-bold { font-weight: var(--font-weight-bold); }
+.text-primary { color: var(--color-text-primary); }
+
+.edit-cell {
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.extraction-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: white;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-half {
+  flex: 1;
+}
+
+.mt-4 {
+  margin-top: var(--spacing-xl);
+}

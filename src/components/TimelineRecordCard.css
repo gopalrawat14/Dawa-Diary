@@ -1,0 +1,117 @@
+.timeline-item-wrapper {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+}
+
+.timeline-spine {
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: var(--spacing-md);
+  padding-top: var(--spacing-md);
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #E2E8F0;
+  z-index: 2;
+  margin-bottom: 4px;
+}
+
+.timeline-line {
+  width: 2px;
+  background-color: #E2E8F0;
+  flex-grow: 1;
+}
+
+/* Colors */
+.bg-blue { background-color: var(--color-primary); }
+.bg-purple { background-color: #8B5CF6; }
+.bg-orange { background-color: #F97316; }
+.bg-green { background-color: var(--color-success); }
+
+.color-blue { color: var(--color-primary); background-color: rgba(27, 108, 168, 0.1); }
+.color-purple { color: #8B5CF6; background-color: rgba(139, 92, 246, 0.1); }
+.color-orange { color: #F97316; background-color: rgba(249, 115, 22, 0.1); }
+.color-green { color: var(--color-success); background-color: rgba(46, 204, 113, 0.1); }
+
+.timeline-card-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.tl-card {
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.tl-card:active {
+  transform: scale(0.98);
+}
+
+.tl-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tl-badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.tl-date {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.tl-doctor {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+
+.tl-diagnosis {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.tl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--spacing-md);
+}
+
+.tl-chip {
+  padding: 4px 10px;
+  background-color: #F1F5F9;
+  color: var(--color-text-secondary);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.tl-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  padding: 0;
+}

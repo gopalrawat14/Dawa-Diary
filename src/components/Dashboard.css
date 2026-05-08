@@ -1,0 +1,221 @@
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.dashboard-main {
+  padding: 0 var(--spacing-lg);
+  padding-bottom: 120px; /* space for bottom nav */
+}
+
+.dashboard-section {
+  margin-top: var(--spacing-xl);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.pb-xl {
+  padding-bottom: var(--spacing-xl);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+/* Quick Actions Scroll */
+.quick-actions-scroll {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding: 4px 0 var(--spacing-sm);
+  margin: 0 calc(var(--spacing-lg) * -1); /* bleed out of padding */
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  scrollbar-width: none; /* Firefox */
+}
+
+.quick-actions-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 120px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.quick-action-btn:active {
+  transform: scale(0.95);
+}
+
+.qa-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.bg-blue { background-color: var(--color-primary); }
+.bg-purple { background-color: #8B5CF6; }
+.bg-green { background-color: var(--color-success); }
+.bg-orange { background-color: #F97316; }
+
+.qa-label-en {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.qa-label-hi {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+/* Metric Grid */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Family Scroll */
+.family-scroll {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto;
+  padding: 8px 0;
+  scrollbar-width: none;
+}
+
+.family-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.family-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.family-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-secondary);
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.family-avatar.active {
+  border-color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.family-avatar.dashed {
+  background-color: transparent;
+  border: 2px dashed #CBD5E1;
+}
+
+.family-name {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.text-blue {
+  color: var(--color-primary);
+}
+
+/* Reminders List */
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: var(--color-card-bg);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  border-left: 3px solid var(--color-success);
+}
+
+.reminder-time {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  min-width: 60px;
+}
+
+.reminder-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.reminder-name {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.reminder-dose {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+

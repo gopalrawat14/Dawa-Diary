@@ -1,0 +1,213 @@
+.qr-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  background-color: #1B6CA8; /* Blue background for contrast */
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease;
+}
+
+.qr-header {
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qr-header button {
+  color: white;
+}
+
+.qr-header h2 {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: white;
+}
+
+.qr-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+}
+
+.qr-success-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(46, 204, 113, 0.2);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #A7F3D0;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-lg);
+}
+
+.qr-title {
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.qr-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.qr-card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code-wrapper {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #E2E8F0;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.mock-qr-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, #1A1A2E 25%, transparent 25%), 
+    linear-gradient(-45deg, #1A1A2E 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #1A1A2E 75%), 
+    linear-gradient(-45deg, transparent 75%, #1A1A2E 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+/* Add position anchors to mock QR */
+.mock-qr-pattern::before, .mock-qr-pattern::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 6px solid #1B6CA8;
+  background-color: white;
+  border-radius: 4px;
+}
+.mock-qr-pattern::before { top: 12px; left: 12px; }
+.mock-qr-pattern::after { top: 12px; right: 12px; }
+
+.qr-watermark {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 8px;
+}
+
+.watermark-heart {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-primary);
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>') no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>') no-repeat center;
+}
+
+.qr-timer-section {
+  width: 100%;
+}
+
+.qr-timer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 8px;
+}
+
+.qr-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #F1F5F9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.qr-progress-bar {
+  height: 100%;
+  background-color: var(--color-success);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.mt-md { margin-top: var(--spacing-md); }
+.text-primary { color: #A7F3D0; }
+
+.qr-actions-container {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.secondary-actions-row {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.flex-1 { flex: 1; }
+
+.outlined {
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+  color: white !important;
+  box-shadow: none !important;
+}

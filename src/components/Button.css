@@ -1,0 +1,60 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--touch-target-min); /* Touch targets minimum 48px, requested 52px */
+  min-height: 52px;
+  padding: 0 var(--spacing-lg);
+  border-radius: var(--radius-button);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  gap: var(--spacing-sm);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* PrimaryButton — full width, #1B6CA8, white text, 52px height, 16px radius (wait, radius is 12px for buttons per design system, I will use 12px) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #155584;
+}
+
+/* SecondaryButton — outlined, blue border, blue text */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent);
+}
+
+/* GhostButton — no border, text only */
+.btn-ghost {
+  color: var(--color-primary);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-accent);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

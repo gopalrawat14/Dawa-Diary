@@ -1,0 +1,85 @@
+/* Common UI States CSS */
+
+.empty-state-container,
+.error-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  height: 100%;
+  min-height: 300px;
+}
+
+.empty-illustration,
+.error-illustration {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-primary);
+}
+
+.error-illustration.upload { color: var(--color-error); }
+.error-illustration.ai { color: #D97706; }
+.error-illustration.network { color: #64748B; }
+.error-illustration.storage { color: var(--color-error); }
+
+.illustration-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(1);
+  animation: pulseBg 3s infinite alternate;
+}
+
+@keyframes pulseBg {
+  0% { transform: scale(1); opacity: 0.1; }
+  100% { transform: scale(1.1); opacity: 0.05; }
+}
+
+.empty-title,
+.error-title {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.empty-desc,
+.error-desc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+.mt-lg { margin-top: var(--spacing-lg); }
+.px-xl { padding-left: 32px; padding-right: 32px; }
+.w-full { width: 100%; }
+
+.error-actions {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.error-secondary-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  padding: 12px;
+  cursor: pointer;
+}

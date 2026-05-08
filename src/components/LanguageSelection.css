@@ -1,0 +1,119 @@
+.lang-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
+  background-color: var(--color-background);
+}
+
+.lang-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.lang-title-hi {
+  font-size: var(--font-size-h1);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 4px;
+}
+
+.lang-title-en {
+  font-size: var(--font-size-h2);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: var(--spacing-sm);
+}
+
+.lang-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-primary);
+  background-color: var(--color-accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: var(--font-weight-semibold);
+}
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.lang-card {
+  background-color: var(--color-card-bg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-card);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-card.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-accent);
+}
+
+.lang-card:active {
+  transform: scale(0.98);
+}
+
+.lang-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-flag {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.lang-native {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.lang-trans {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.lang-check {
+  background-color: var(--color-primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.lang-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-continue {
+  width: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.lang-note {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+  text-align: center;
+}

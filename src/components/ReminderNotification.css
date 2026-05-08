@@ -1,0 +1,100 @@
+.reminder-overlay-container {
+  position: fixed;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 440px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+  transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reminder-overlay-container.visible {
+  top: 10px;
+}
+
+.reminder-toast {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px 8px;
+}
+
+.toast-icon {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast-app-name {
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  flex-grow: 1;
+}
+
+.toast-time {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.toast-body {
+  padding: 0 16px 12px;
+}
+
+.toast-body h4 {
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.toast-body p {
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.toast-actions {
+  display: flex;
+  border-top: 1px solid #E2E8F0;
+}
+
+.toast-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.toast-btn.primary {
+  color: var(--color-success);
+  border-right: 1px solid #E2E8F0;
+}
+
+.toast-btn.secondary {
+  color: var(--color-primary);
+}

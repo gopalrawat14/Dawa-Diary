@@ -1,0 +1,141 @@
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-background);
+  overflow: hidden;
+  position: relative;
+}
+
+.onboarding-slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.onboarding-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top 55% for image */
+.onboarding-image-container {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F4F8; /* slight contrast for images */
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.onboarding-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover ensures the image fills the area nicely */
+}
+
+/* Bottom 45% for text and controls */
+.onboarding-content {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl) var(--spacing-lg) 0;
+  z-index: 1;
+}
+
+.onboarding-text-area {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.onboarding-title-hi {
+  font-size: var(--font-size-h1);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.onboarding-desc-hi {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+}
+
+.onboarding-title-en {
+  font-size: var(--font-size-caption);
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Controls docked at the bottom */
+.onboarding-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top, var(--color-background) 80%, transparent);
+  z-index: 10;
+}
+
+.onboarding-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--color-primary);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.onboarding-actions {
+  width: 100%;
+}
+
+.action-buttons-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-skip {
+  padding: 0 var(--spacing-md) !important;
+  color: var(--color-text-secondary) !important;
+}
+
+.btn-next {
+  min-width: 120px;
+}
+
+.btn-start {
+  width: 100%;
+}

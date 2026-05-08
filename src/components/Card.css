@@ -1,0 +1,22 @@
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.card-pad-none {
+  padding: 0;
+}
+
+.card-pad-sm {
+  padding: var(--spacing-sm);
+}
+
+.card-pad-md {
+  padding: var(--spacing-md);
+}
+
+.card-pad-lg {
+  padding: var(--spacing-lg);
+}

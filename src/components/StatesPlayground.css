@@ -1,0 +1,76 @@
+.playground-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F8FAFB;
+  z-index: 4000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.playground-header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.playground-header h2 {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: white;
+}
+
+.playground-header .icon-btn {
+  color: white;
+}
+
+.playground-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+}
+
+.playground-banner {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #D97706;
+  padding: 12px;
+  border-radius: var(--radius-card);
+  font-size: 13px;
+  margin-bottom: var(--spacing-xl);
+  border: 1px dashed rgba(245, 158, 11, 0.5);
+}
+
+.playground-section-title {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.playground-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.playground-section h4 {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.state-box {
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}

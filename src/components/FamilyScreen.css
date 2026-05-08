@@ -1,0 +1,237 @@
+.family-screen {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.active-member-banner {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--color-success);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.fs-section-title {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.fs-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.family-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.family-card {
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.family-card.active-card {
+  border-color: var(--color-primary);
+  background-color: #F8FAFB;
+}
+
+.fc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.fc-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  color: #94A3B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fc-avatar.me {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.fc-info {
+  flex-grow: 1;
+}
+
+.fc-info h3 {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.fc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fc-badge {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  padding: 2px 8px;
+  background-color: #F1F5F9;
+  color: var(--color-text-secondary);
+  border-radius: 12px;
+}
+
+.fc-badge.self {
+  background-color: rgba(27, 108, 168, 0.1);
+  color: var(--color-primary);
+}
+
+.fc-details {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.fc-switch-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.fc-stats {
+  display: flex;
+  border-top: 1px solid #F1F5F9;
+  padding-top: var(--spacing-md);
+  gap: var(--spacing-lg);
+}
+
+.fc-stat {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.fc-stat strong {
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.add-member-card {
+  width: 100%;
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--radius-card);
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: all 0.2s;
+}
+
+.add-member-card:hover {
+  background-color: #F8FAFB;
+  border-color: var(--color-primary);
+}
+
+.amc-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(27, 108, 168, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-member-card span {
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Add Member Overlay */
+.add-member-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 3000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.add-member-sheet {
+  width: 100%;
+  background-color: white;
+  border-radius: 24px 24px 0 0;
+  padding: var(--spacing-lg);
+  animation: slideUpSheet 0.3s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+}
+
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.am-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.am-sheet-header h3 {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+}
+
+.am-photo-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.am-photo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #F1F5F9;
+  border: 2px dashed #CBD5E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.am-photo-upload span {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.mt-md { margin-top: var(--spacing-md); }
